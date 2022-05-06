@@ -56,23 +56,25 @@ class Analisis:
         desviacionBedrooms = datos["Avg. Area Number of Bedrooms"].std() ; desviacionPopulation = datos["Area Population"].std() ; desviacionPrice = datos["Price"].std()
         print("desviacion de la variable Income: ", desviacionIncome,"\ndesviacion de la variable Age: ", desviacionAge,"\ndesviacion de la variable Rooms : ", desviacionRooms,"\ndesviacion de la variable Bedrooms: ", desviacionBedrooms,"\ndesviacion de la variable Population: ", desviacionPopulation,"\ndesviacion de la variable Precio: ", desviacionPrice)
 
-def iniciar ():
+def iniciador ():
     eleccion=int(input("¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables"))
     if eleccion == 1:
         Analisis.analisis_inicial()
-        iniciar()
+        iniciador()
     elif eleccion == 2:
         Analisis.crear_diccionario()
-        iniciar()
+        iniciador()
     elif eleccion == 3:
         Analisis.graficas_listaRooms()
-        iniciar()
+        iniciador()
     elif eleccion == 4:
         Analisis.calculos()
-        iniciar()
+        iniciador()
     elif eleccion == 5:
         variables = ["Avg. Area Income","Avg. Area House Age", "Avg. Area Number of Rooms", "Avg. Area Number of Bedrooms","Price", "Area Population"]
         for i in variables:
             Analisis.histograma(i)
-        iniciar()
-iniciar()
+        iniciador()
+    elif eleccion == 6:
+        exit()
+iniciador()
