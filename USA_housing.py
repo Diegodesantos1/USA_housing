@@ -6,6 +6,7 @@ print(datos)
 lista_Income = list(datos["Avg. Area Income"]) ; lista_Age = list(datos["Avg. Area House Age"]) ; lista_Rooms = list(datos["Avg. Area Number of Rooms"])
 lista_Bedrooms = list(datos["Avg. Area Number of Bedrooms"]) ; lista_Population = list(datos["Area Population"]) ; lista_Price = list(datos["Price"]) ; lista_Address = list(datos["Address"])
 class Analisis:
+    print("Las variables son: Income, Age,Rooms, Bedrooms, Population, Price, Address ")
     def crear_diccionario():
         global diccionario
         diccionario = {}
@@ -27,4 +28,3 @@ class Analisis:
         plt.show()
 Analisis.crear_diccionario()
 Analisis.graficas_listaRooms()
-Analisis.graficas_listaPrice()
