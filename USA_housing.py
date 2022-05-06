@@ -50,9 +50,13 @@ class Analisis:
         desviacionIncome = datos["Avg. Area Income"].std() ; desviacionAge = datos["Avg. Area House Age"].std() ; desviacionRooms = datos["Avg. Area Number of Rooms"].std()
         desviacionBedrooms = datos["Avg. Area Number of Bedrooms"].std() ; desviacionPopulation = datos["Area Population"].std() ; desviacionPrice = datos["Price"].std()
         print("Desviacion de la variable Income: ", desviacionIncome,"\nDesviacion de la variable Age: ", desviacionAge,"\nDesviacion de la variable Rooms : ", desviacionRooms,"\nDesviacion de la variable Bedrooms: ", desviacionBedrooms,"\nDesviacion de la variable Population: ", desviacionPopulation,"\nDesviacion de la variable Precio: ", desviacionPrice)
+    def maximo_minimos(variable):
+        maxim = max(datos[variable]) ; minim = min(datos[variable])
+        print (f"\nEl máximo de {variable} es {maxim}")
+        print (f"\nEl mínimo de {variable} es {minim}")
 
 def iniciador ():
-    eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas\n6: Finalizar\n", 1, 6)
+    eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1: Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas\n6: Máximos y mínimos\n7: Finalizar\n", 1, 6)
     if eleccion == 1:
         Analisis.analisis_inicial()
         iniciador()
@@ -73,4 +77,8 @@ def iniciador ():
             Analisis.histograma(i)
         iniciador()
     elif eleccion == 6:
+        variables = ["Avg. Area Income","Avg. Area House Age", "Avg. Area Number of Rooms", "Avg. Area Number of Bedrooms","Price", "Area Population"]
+        for i in variables:
+            Analisis.maximo_minimos(i)
+    elif eleccion == 7:
         exit()
