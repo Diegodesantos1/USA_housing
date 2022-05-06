@@ -12,37 +12,31 @@ class Analisis:
     def analisis_inicial():
         print("Las columnas del dataset son:")
         print(datos.columns)
-        print("VARIABLES + DATOS")
+        print("Las variables con los datos")
         print(datos.head())
         print("La descripción del dataset es")
         print(datos.describe())
-        print("La información del dataset es")
-        print(datos.info())
     def crear_diccionario():
         global diccionario
         diccionario = {}
         for i in range(len(datos)):
             diccionario[i] = datos.iloc[i]
         print(diccionario)
-    def graficas_listaRooms():
-        plt.subplot(1,2,1)
-        plt.bar(lista_Rooms, lista_Income, color = "red") ; plt.ylabel("Habitaciones") ; plt.xlabel("Sueldo")
-        plt.subplot(1,2,2)
-        plt.bar(lista_Rooms, lista_Age, color = "blue") ; plt.ylabel("Habitaciones") ; plt.xlabel("Edad de la casa")
-        plt.show()
-        plt.subplot(1,3,1)
-        plt.bar(lista_Rooms, lista_Bedrooms, color = "green") ; plt.ylabel("Habitaciones") ; plt.xlabel("Casas")
-        plt.subplot(1,3,2)
-        plt.bar(lista_Rooms, lista_Population, color = "orange") ; plt.ylabel("Habitaciones") ; plt.xlabel("Población")
-        plt.subplot(1,3,3)
-        plt.bar(lista_Rooms, lista_Price, color = "purple") ; plt.ylabel("Habitaciones") ; plt.xlabel("Precio")
+    def graficas_listaRooms(variable):
+        plt.figure(figsize = (9,4))
+        plt.bar(lista_Rooms, datos[variable] , color= "green")
+        plt.xlabel("Habitaciones")
+        plt.ylabel(variable)
+        plt.title("Gráfico de barras de {}".format(variable))
+        plt.savefig(f"img/Grafico_barras/{variable}.png")
         plt.show()
     def histograma(variable):
-        plt.figure(figsize = (9,3))
+        plt.figure(figsize = (9,4))
         plt.hist(datos[variable], bins = 50, color= "green")
         plt.xlabel(variable)
         plt.ylabel("Frecuencia")
         plt.title("Distribución variable {} con histograma".format(variable))
+        plt.savefig(f"img/Gráficos_Histograma/{variable}.png")
         plt.show()
     def calculos():
         print("="*50)
@@ -67,7 +61,9 @@ def iniciador ():
         Analisis.crear_diccionario()
         iniciador()
     elif eleccion == 3:
-        Analisis.graficas_listaRooms()
+        variables = ["Avg. Area Income","Avg. Area House Age", "Avg. Area Number of Rooms", "Avg. Area Number of Bedrooms","Price", "Area Population"]
+        for i in variables:
+            Analisis.graficas_listaRooms(i)
         iniciador()
     elif eleccion == 4:
         Analisis.calculos()
