@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 datos = pd.read_csv("Housing.csv", sep= ",")
 print(datos)
@@ -26,5 +27,10 @@ class Analisis:
         plt.subplot(1,3,3)
         plt.bar(lista_Rooms, lista_Price, color = "purple") ; plt.ylabel("Habitaciones") ; plt.xlabel("Precio")
         plt.show()
+    def media(datos):
+        mediaIncome = datos["Avg. Area Income"].mean() ; mediaAge = datos["Avg. Area House Age"].mean() ; mediaRooms = datos["Avg. Area Number of Rooms"].mean()
+        mediaBedrooms = datos["Avg. Area Number of Bedrooms"].mean() ; mediaPopulation = datos["Area Population"].mean() ; mediaPrice = datos["Price"].mean()
+        print("Media de la variable Income: ", mediaIncome,"\nMedia de la variable Age: ", mediaAge,"\nMedia de la variable Rooms : ", mediaRooms,"\nMedia de la variable Bedrooms: ", mediaBedrooms,"\nMedia de la variable Population: ", mediaPopulation,"\nMedia de la variable Precio: ", mediaPrice)
 Analisis.crear_diccionario()
 Analisis.graficas_listaRooms()
+Analisis.media(datos)
