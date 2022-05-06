@@ -2,12 +2,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-datos = pd.read_csv("Housing.csv", sep= ",")
+datos = pd.read_csv("USA_Housing.csv", sep= ",")
 print(datos)
 lista_Income = list(datos["Avg. Area Income"]) ; lista_Age = list(datos["Avg. Area House Age"]) ; lista_Rooms = list(datos["Avg. Area Number of Rooms"])
 lista_Bedrooms = list(datos["Avg. Area Number of Bedrooms"]) ; lista_Population = list(datos["Area Population"]) ; lista_Price = list(datos["Price"]) ; lista_Address = list(datos["Address"])
 class Analisis:
-    print("Las variables son: Income, Age,Rooms, Bedrooms, Population, Price, Address ")
+    def analisis_inicial():
+        print("Las columnas del dataset son:")
+        print(datos.columns)
+        print("VARIABLES + DATOS")
+        print(datos.head())
+        print("La descripción del dataset es")
+        print(datos.describe())
+        print("La información del dataset es")
+        print(datos.info())
     def crear_diccionario():
         global diccionario
         diccionario = {}
@@ -16,16 +24,23 @@ class Analisis:
         print(diccionario)
     def graficas_listaRooms():
         plt.subplot(1,2,1)
-        plt.bar(lista_Rooms, lista_Income, color = "orange") ; plt.ylabel("Habitaciones") ; plt.xlabel("Sueldo")
+        plt.bar(lista_Rooms, lista_Income, color = "red") ; plt.ylabel("Habitaciones") ; plt.xlabel("Sueldo")
         plt.subplot(1,2,2)
         plt.bar(lista_Rooms, lista_Age, color = "blue") ; plt.ylabel("Habitaciones") ; plt.xlabel("Edad de la casa")
         plt.show()
         plt.subplot(1,3,1)
-        plt.bar(lista_Rooms, lista_Bedrooms, color = "red") ; plt.ylabel("Habitaciones") ; plt.xlabel("Casas")
+        plt.bar(lista_Rooms, lista_Bedrooms, color = "green") ; plt.ylabel("Habitaciones") ; plt.xlabel("Casas")
         plt.subplot(1,3,2)
-        plt.bar(lista_Rooms, lista_Population, color = "yellow") ; plt.ylabel("Habitaciones") ; plt.xlabel("Población")
+        plt.bar(lista_Rooms, lista_Population, color = "orange") ; plt.ylabel("Habitaciones") ; plt.xlabel("Población")
         plt.subplot(1,3,3)
         plt.bar(lista_Rooms, lista_Price, color = "purple") ; plt.ylabel("Habitaciones") ; plt.xlabel("Precio")
+        plt.show()
+    def histograma(variable):
+        plt.figure(figsize = (9,3))
+        plt.hist(datos[variable], bins = 50, color= "green")
+        plt.xlabel(variable)
+        plt.ylabel("Frecuencia")
+        plt.title("Distribución variable {} con histograma".format(variable))
         plt.show()
     def calculos():
         print("="*50)
@@ -40,6 +55,24 @@ class Analisis:
         desviacionIncome = datos["Avg. Area Income"].std() ; desviacionAge = datos["Avg. Area House Age"].std() ; desviacionRooms = datos["Avg. Area Number of Rooms"].std()
         desviacionBedrooms = datos["Avg. Area Number of Bedrooms"].std() ; desviacionPopulation = datos["Area Population"].std() ; desviacionPrice = datos["Price"].std()
         print("desviacion de la variable Income: ", desviacionIncome,"\ndesviacion de la variable Age: ", desviacionAge,"\ndesviacion de la variable Rooms : ", desviacionRooms,"\ndesviacion de la variable Bedrooms: ", desviacionBedrooms,"\ndesviacion de la variable Population: ", desviacionPopulation,"\ndesviacion de la variable Precio: ", desviacionPrice)
-Analisis.crear_diccionario()
-Analisis.graficas_listaRooms()
-Analisis.calculos()
+
+def iniciar ():
+    eleccion=int(input("¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables"))
+    if eleccion == 1:
+        Analisis.analisis_inicial()
+        iniciar()
+    elif eleccion == 2:
+        Analisis.crear_diccionario()
+        iniciar()
+    elif eleccion == 3:
+        Analisis.graficas_listaRooms()
+        iniciar()
+    elif eleccion == 4:
+        Analisis.calculos()
+        iniciar()
+    elif eleccion == 5:
+        variables = ["Avg. Area Income","Avg. Area House Age", "Avg. Area Number of Rooms", "Avg. Area Number of Bedrooms","Price", "Area Population"]
+        for i in variables:
+            Analisis.histograma(i)
+        iniciar()
+iniciar()
