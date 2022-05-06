@@ -28,7 +28,7 @@ class Analisis:
         plt.xlabel("Habitaciones")
         plt.ylabel(variable)
         plt.title("Gráfico de barras de {}".format(variable))
-        plt.savefig(f"img/Grafico_barras/{variable}.png")
+        plt.savefig(f"img/Barras/{variable}.png")
         plt.show()
     def histograma(variable):
         plt.figure(figsize = (9,4))
@@ -36,7 +36,7 @@ class Analisis:
         plt.xlabel(variable)
         plt.ylabel("Frecuencia")
         plt.title("Distribución variable {} con histograma".format(variable))
-        plt.savefig(f"img/Gráficos_Histograma/{variable}.png")
+        plt.savefig(f"img/Histogramas/{variable}.png")
         plt.show()
     def calculos():
         print("="*50)
@@ -53,7 +53,7 @@ class Analisis:
         print("Desviacion de la variable Income: ", desviacionIncome,"\nDesviacion de la variable Age: ", desviacionAge,"\nDesviacion de la variable Rooms : ", desviacionRooms,"\nDesviacion de la variable Bedrooms: ", desviacionBedrooms,"\nDesviacion de la variable Population: ", desviacionPopulation,"\nDesviacion de la variable Precio: ", desviacionPrice)
 
 def iniciador ():
-    eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables\n6: Finalizar\n\n", 1, 6)
+    eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas\n6: Finalizar\n\n", 1, 6)
     if eleccion == 1:
         Analisis.analisis_inicial()
         iniciador()
