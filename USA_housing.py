@@ -80,5 +80,6 @@ def iniciador ():
         variables = ["Avg. Area Income","Avg. Area House Age", "Avg. Area Number of Rooms", "Avg. Area Number of Bedrooms","Price", "Area Population"]
         for i in variables:
             Analisis.maximo_minimos(i)
+        iniciador()
     elif eleccion == 7:
         exit()
