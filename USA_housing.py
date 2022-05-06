@@ -57,7 +57,7 @@ class Analisis:
         print("desviacion de la variable Income: ", desviacionIncome,"\ndesviacion de la variable Age: ", desviacionAge,"\ndesviacion de la variable Rooms : ", desviacionRooms,"\ndesviacion de la variable Bedrooms: ", desviacionBedrooms,"\ndesviacion de la variable Population: ", desviacionPopulation,"\ndesviacion de la variable Precio: ", desviacionPrice)
 
 def iniciador ():
-    eleccion=int(input("¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables"))
+    eleccion=int(input("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables"))
     if eleccion == 1:
         Analisis.analisis_inicial()
         iniciador()
