@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+from introducir.numero import solicitar_introducir_numero_extremo
+
 datos = pd.read_csv("USA_Housing.csv", sep= ",")
 print(datos)
 lista_Income = list(datos["Avg. Area Income"]) ; lista_Age = list(datos["Avg. Area House Age"]) ; lista_Rooms = list(datos["Avg. Area Number of Rooms"])
@@ -57,7 +59,7 @@ class Analisis:
         print("desviacion de la variable Income: ", desviacionIncome,"\ndesviacion de la variable Age: ", desviacionAge,"\ndesviacion de la variable Rooms : ", desviacionRooms,"\ndesviacion de la variable Bedrooms: ", desviacionBedrooms,"\ndesviacion de la variable Population: ", desviacionPopulation,"\ndesviacion de la variable Precio: ", desviacionPrice)
 
 def iniciador ():
-    eleccion=int(input("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables"))
+    eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables\n6: Finalizar", 1, 6)
     if eleccion == 1:
         Analisis.analisis_inicial()
         iniciador()
