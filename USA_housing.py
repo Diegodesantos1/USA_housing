@@ -23,22 +23,19 @@ class Analisis:
             diccionario[i] = datos.iloc[i]
         print(diccionario)
     def graficas_listaRooms(variable):
-        plt.figure(figsize = (9,4))
-        plt.bar(lista_Rooms, datos[variable] , color= "green")
-        plt.xlabel("Habitaciones")
-        plt.ylabel(variable)
+        plt.figure(figsize = (9,4)) ; plt.bar(lista_Rooms, datos[variable] , color= "green")
+        plt.xlabel("Habitaciones") ; plt.ylabel(variable)
         plt.title("Gráfico de barras de {}".format(variable))
         plt.savefig(f"img/Barras/{variable}.png")
         plt.show()
     def histograma(variable):
-        plt.figure(figsize = (9,4))
-        plt.hist(datos[variable], bins = 50, color= "green")
-        plt.xlabel(variable)
-        plt.ylabel("Frecuencia")
+        plt.figure(figsize = (9,4)) ; plt.hist(datos[variable], bins = 50, color= "green")
+        plt.xlabel(variable) ; plt.ylabel("Frecuencia")
         plt.title("Distribución variable {} con histograma".format(variable))
         plt.savefig(f"img/Histogramas/{variable}.png")
         plt.show()
     def calculos():
+        global mediaIncome, mediaAge, mediaRooms, mediaBedrooms, mediaPopulation, mediaPrice
         print("="*50)
         mediaIncome = datos["Avg. Area Income"].mean() ; mediaAge = datos["Avg. Area House Age"].mean() ; mediaRooms = datos["Avg. Area Number of Rooms"].mean()
         mediaBedrooms = datos["Avg. Area Number of Bedrooms"].mean() ; mediaPopulation = datos["Area Population"].mean() ; mediaPrice = datos["Price"].mean()
