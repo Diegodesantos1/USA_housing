@@ -56,7 +56,7 @@ class Analisis:
         print("="*50)
         desviacionIncome = datos["Avg. Area Income"].std() ; desviacionAge = datos["Avg. Area House Age"].std() ; desviacionRooms = datos["Avg. Area Number of Rooms"].std()
         desviacionBedrooms = datos["Avg. Area Number of Bedrooms"].std() ; desviacionPopulation = datos["Area Population"].std() ; desviacionPrice = datos["Price"].std()
-        print("desviacion de la variable Income: ", desviacionIncome,"\ndesviacion de la variable Age: ", desviacionAge,"\ndesviacion de la variable Rooms : ", desviacionRooms,"\ndesviacion de la variable Bedrooms: ", desviacionBedrooms,"\ndesviacion de la variable Population: ", desviacionPopulation,"\ndesviacion de la variable Precio: ", desviacionPrice)
+        print("Desviacion de la variable Income: ", desviacionIncome,"\nDesviacion de la variable Age: ", desviacionAge,"\nDesviacion de la variable Rooms : ", desviacionRooms,"\nDesviacion de la variable Bedrooms: ", desviacionBedrooms,"\nDesviacion de la variable Population: ", desviacionPopulation,"\nDesviacion de la variable Precio: ", desviacionPrice)
 
 def iniciador ():
     eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas con todas las variables\n6: Finalizar\n\n", 1, 6)
