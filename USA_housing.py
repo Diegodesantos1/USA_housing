@@ -1,10 +1,12 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
 from introducir.numero import solicitar_introducir_numero_extremo
 
 datos = pd.read_csv("USA_Housing.csv", sep= ",")
+datos.fillna(0, inplace=True)
 print(datos)
 lista_Income = list(datos["Avg. Area Income"]) ; lista_Age = list(datos["Avg. Area House Age"]) ; lista_Rooms = list(datos["Avg. Area Number of Rooms"])
 lista_Bedrooms = list(datos["Avg. Area Number of Bedrooms"]) ; lista_Population = list(datos["Area Population"]) ; lista_Price = list(datos["Price"]) ; lista_Address = list(datos["Address"])
@@ -22,7 +24,7 @@ class Analisis:
         for i in range(len(datos)):
             diccionario[i] = datos.iloc[i]
         print(diccionario)
-    def graficas_listaRooms(variable):
+    def barras(variable):
         plt.figure(figsize = (9,4)) ; plt.bar(lista_Rooms, datos[variable] , color= "green")
         plt.xlabel("Habitaciones") ; plt.ylabel(variable)
         plt.title("Gráfico de barras de {}".format(variable))
@@ -30,7 +32,7 @@ class Analisis:
         plt.show()
     def histograma(variable):
         plt.figure(figsize = (9,4)) ; plt.hist(datos[variable], bins = 50, color= "green")
-        plt.xlabel(variable) ; plt.ylabel("Frecuencia")
+        plt.xlabel(variable) ;plt.ylabel("Frecuencia")
         plt.title("Distribución variable {} con histograma".format(variable))
         plt.savefig(f"img/Histogramas/{variable}.png")
         plt.show()
@@ -50,7 +52,7 @@ class Analisis:
         print("Desviacion de la variable Income: ", desviacionIncome,"\nDesviacion de la variable Age: ", desviacionAge,"\nDesviacion de la variable Rooms : ", desviacionRooms,"\nDesviacion de la variable Bedrooms: ", desviacionBedrooms,"\nDesviacion de la variable Population: ", desviacionPopulation,"\nDesviacion de la variable Precio: ", desviacionPrice)
 
 def iniciador ():
-    eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas\n6: Finalizar\n\n", 1, 6)
+    eleccion=solicitar_introducir_numero_extremo("\n\n¿Qué desea hacer?\n1:Análisis inicial\n2: Diccionario con los datos\n3: Graficas de Barras\n4: Calculo de Media, Varianza y Desviación Típica\n5: Histogramas\n6: Finalizar\n", 1, 6)
     if eleccion == 1:
         Analisis.analisis_inicial()
         iniciador()
@@ -60,7 +62,7 @@ def iniciador ():
     elif eleccion == 3:
         variables = ["Avg. Area Income","Avg. Area House Age", "Avg. Area Number of Rooms", "Avg. Area Number of Bedrooms","Price", "Area Population"]
         for i in variables:
-            Analisis.graficas_listaRooms(i)
+            Analisis.barras(i)
         iniciador()
     elif eleccion == 4:
         Analisis.calculos()
