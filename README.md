@@ -94,7 +94,7 @@ def iniciador ():
         exit()
 ```
 
-Las imágenes de los gráficos de barras son:
+<h2 align="center">Las imágenes de los gráficos de barras son:</h1>
 
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Area%20Population.png)
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20House%20Age.png)
@@ -103,7 +103,7 @@ Las imágenes de los gráficos de barras son:
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20Number%20of%20Rooms.png)
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Price.png)
 
-Las imágenes de los histogramas son:
+<h2 align="center">Las imágenes de los histogramas son:</h1>
 
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Area%20Population.png)
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Avg.%20Area%20House%20Age.png)
