@@ -101,7 +101,7 @@ Las imágenes de los gráficos de barras son:
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20Income.png)
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20Number%20of%20Bedrooms.png)
 ![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20Number%20of%20Rooms.png)
-https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Price.png
+![Image text](https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Price.png)
 
 Las imágenes de los histogramas son:
 
