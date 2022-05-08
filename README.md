@@ -93,3 +93,21 @@ def iniciador ():
     elif eleccion == 7:
         exit()
 ```
+
+Las imágenes de los gráficos de barras son:
+
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Area%20Population.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20House%20Age.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20Income.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20Number%20of%20Bedrooms.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Avg.%20Area%20Number%20of%20Rooms.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Barras/Price.png
+
+Las imágenes de los histogramas son:
+
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Area%20Population.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Avg.%20Area%20House%20Age.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Avg.%20Area%20Income.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Avg.%20Area%20Number%20of%20Bedrooms.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Avg.%20Area%20Number%20of%20Rooms.png
+https://github.com/Diegodesantos1/USA_housing/blob/main/img/Histogramas/Price.png
